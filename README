@@ -1,0 +1,29 @@
+NOTE: Several temporary files are created and deleted.
+      So make sure you're running this in a new, clean folder.
+      It's quick and dirty code. USE AT YOUR OWN PERIL.
+
+Dependencies: 
+    gnuplot with pdfcairo terminal
+    bash shell (with awk and paste, which are default inclusions on all Linux systems I have used)
+
+Running is easy: 
+    ./pictureMyPain.sh
+
+Output:
+    A PDF file named rejectionIsNormal.pdf
+    (I drew the labeling arrows / legend manually in Apple Keynote)
+
+data.csv needs a VERY SPECIFIC format as follows:
+    comma separated
+    ProjectID, Name, IsDead?, FirstSubDate, PubDate, Reject1Date, ..., Reject6Date
+    All dates should be in dd/mm/yyyy format
+    If any column doesn't have data, it should have a hyphen sign -
+    IsDead? is a binary field, 1 meaning the project is completely dead
+
+    And yes, I'm fully aware how brittle this is; you do it on a Sunday morning at 7 and then we'll see ;-)
+
+    My own data.csv is attached so you can make sure the code works as expected
+
+(c) Ankit Singla @ ETH Zürich, 2020 - 
+    Thanks to Brighten Godfrey for inspiration (http://youinfinitesnake.blogspot.com/2014/02/on-getting-rejected.html) 
+    The gnuplot script was also adapted from Brighten Godfrey's scripts
